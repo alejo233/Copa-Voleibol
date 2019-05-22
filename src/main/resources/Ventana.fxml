@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lab6.controllers.WindowsController">
+   <children>
+      <TabPane prefHeight="450.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Información">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="421.0" prefWidth="310.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="75.0" prefHeight="303.0" prefWidth="287.0" style="-fx-border-color: #000; -fx-border-radius: 10px;">
+                                 <children>
+                                    <ImageView fx:id="avatar" fitHeight="122.0" fitWidth="120.0" layoutX="84.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@descarga.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="labName" layoutX="89.0" layoutY="143.0" text="Nombre y Apellido" />
+                                    <Label fx:id="labId" layoutX="14.0" layoutY="14.0" text="ID" />
+                                    <Label fx:id="labName" layoutX="124.0" layoutY="171.0" text="Correo" />
+                                    <Label fx:id="labGender" layoutX="122.0" layoutY="199.0" text="Genero" />
+                                    <Label fx:id="labCountry" layoutX="130.0" layoutY="227.0" text="País" />
+                                    <Label fx:id="labBirthday" layoutX="87.0" layoutY="255.0" text="Fecha Cumpleaños" />
+                                 </children>
+                              </Pane>
+                              <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutX="29.0" layoutY="65.0" prefHeight="22.0" prefWidth="81.0" style="-fx-border-radius: 5px; -fx-border-color: #000; -fx-background-color: #009EFF;" text="Ver Datos" textAlignment="CENTER" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="171.0" prefWidth="325.0">
+                           <children>
+                              <Pane layoutX="8.0" layoutY="182.0" prefHeight="89.0" prefWidth="310.0" style="-fx-border-color: #000; -fx-border-radius: 10px;">
+                                 <children>
+                                    <Button fx:id="btnSearchSpectator" layoutX="134.0" layoutY="21.0" mnemonicParsing="false" onAction="#searchSpectator" prefHeight="32.0" prefWidth="73.0" text="Buscar" />
+                                    <Label layoutX="14.0" layoutY="26.0" text="Id" />
+                                    <TextField fx:id="txtSpectatorId" layoutX="35.0" layoutY="21.0" onAction="#searchSpectator" prefHeight="26.0" prefWidth="83.0" />
+                                    <Text fx:id="labSpectatorMessage" layoutX="69.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensaje de error con el id XX" />
+                                    <Label fx:id="labSpectatorTime" layoutX="229.0" layoutY="29.0" text="Tiempo: xxs" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="8.0" layoutY="290.0" prefHeight="89.0" prefWidth="310.0" style="-fx-border-color: #000; -fx-border-radius: 10px;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutX="14.0" layoutY="-10.0" prefHeight="22.0" prefWidth="139.0" style="-fx-border-radius: 5px; -fx-border-color: #000; -fx-background-color: #009EFF;" text="Buscar Participante" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label layoutX="15.0" layoutY="27.0" text="Id" />
+                                    <TextField layoutX="36.0" layoutY="22.0" onAction="#searchParticipant" prefHeight="26.0" prefWidth="83.0" />
+                                    <Text fx:id="labParticipantMessage" layoutX="70.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensaje de error con el id XX" />
+                                    <Label fx:id="labParticipantTime" layoutX="230.0" layoutY="30.0" text="Tiempo: xxs" />
+                                    <Button fx:id="btnSearchParticipant" layoutX="145.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="73.0" text="Buscar" />
+                                 </children>
+                              </Pane>
+                              <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutX="22.0" layoutY="171.0" prefHeight="22.0" prefWidth="139.0" style="-fx-border-radius: 5px; -fx-border-color: #000; -fx-background-color: #009EFF;" text="Buscar espectadores" textAlignment="CENTER" textFill="WHITE" />
+                              <Pane fx:id="dataPane" layoutX="8.0" layoutY="73.0" prefHeight="89.0" prefWidth="310.0" style="-fx-border-color: #000; -fx-border-radius: 10px;">
+                                 <children>
+                                    <Text fx:id="labMessageLoad" layoutX="95.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mensaje de cargado" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutX="14.0" layoutY="-11.0" prefHeight="22.0" prefWidth="81.0" style="-fx-border-radius: 5px; -fx-border-color: #000; -fx-background-color: #009EFF;" text="Cargar Datos" textAlignment="CENTER" textFill="WHITE" />
+                                    <Button fx:id="btnLoadData" layoutX="111.0" layoutY="26.0" mnemonicParsing="false" onAction="#loadData" text="LoadData" />
+                                 </children>
+                              </Pane>
+                              <Text layoutX="-167.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IV Copa Panamericana de Voleibol Masculino Sub-21" textAlignment="CENTER" wrappingWidth="406.13671875">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+          <Tab text="Esquemas" />
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
